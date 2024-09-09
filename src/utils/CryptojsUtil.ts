@@ -1,3 +1,4 @@
+// @ts-ignore
 import CryptoJSUtil from "crypto-js";
 
 const SALT = process.env.SALT || "defaultSalt";

@@ -1,5 +1,8 @@
+// @ts-ignore
 import CryptoJSUtil from "crypto-js";
+// @ts-ignore
 import fs from "fs";
+// @ts-ignore
 import path from "path";
 
 const SALT = process.env.SALT || "defaultSalt";
