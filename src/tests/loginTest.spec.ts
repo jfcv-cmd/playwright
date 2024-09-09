@@ -2,6 +2,7 @@ import { test } from "@playwright/test"
 import LoginPage from "../pages/loginPage"
 import { encryptEnvFile} from "../utils/EncryptEnvFile";
 import { decrypt } from "../utils/CryptojsUtil";
+import logger from "../utils/LoggerUtil";
 
 test("login", async ({ page }) => {
 
@@ -14,6 +15,8 @@ test("login", async ({ page }) => {
     const homePage = await loginPage.clicLoginButton();
 
     await homePage.expectHomePageTitleToBeVisible();
+
+    logger.info("test for login completed.");
 });
 
 test.skip("encryption test", async ({ page }) => {
