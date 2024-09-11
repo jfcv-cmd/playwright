@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 import logger from "../utils/LoggerUtil";
-import LoginPage from "../pages/loginPage";
+import LoginPage from "../pages/LoginPage";
 import { decrypt } from "../utils/CryptojsUtil";
 
 test('contact creation', async ({ page }) => {

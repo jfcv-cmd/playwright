@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test"
 import logger from "../utils/LoggerUtil";
-import ContactPage from "./contactPage";
+import ContactPage from "./ContactPage";
 
 export default class HomePage {
     private readonly homePageTitleSelector = 'Home';
