@@ -1,8 +1,10 @@
 import { Page, expect } from "@playwright/test"
 import logger from "../utils/LoggerUtil";
+import ContactPage from "./contactPage";
 
 export default class HomePage {
     private readonly homePageTitleSelector = 'Home';
+    private readonly contactsLinkSelector = 'Contacts';
 
     constructor(private page: Page) {
 
@@ -16,5 +18,15 @@ export default class HomePage {
                         logger.error(`Error landing on the home page: ${error}`);
                         throw error;
                     });
+    }
+
+    async navigateToContactsTab() {
+        await expect(this.page.getByRole('link', { name: this.contactsLinkSelector })).toBeVisible();
+        logger.info('Contacts Tab is visible');
+
+        await this.page.getByRole('link', { name: this.contactsLinkSelector }).click();
+        logger.info('Contacts Tab clicked');
+
+        return new ContactPage(this.page);
     }
 }
