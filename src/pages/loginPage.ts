@@ -34,7 +34,7 @@ export default class LoginPage {
         logger.info("password filled");
     }
 
-    async clicLoginButton() {
+    async clickLoginButton() {
         await this.page
             .locator(this.loginButtonSelector)
             .click()

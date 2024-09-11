@@ -12,7 +12,7 @@ test("login", async ({ page }) => {
     await loginPage.fillUsername(decrypt(process.env.userid as string));
     await loginPage.fillPassword(decrypt(process.env.password as string));
 
-    const homePage = await loginPage.clicLoginButton();
+    const homePage = await loginPage.clickLoginButton();
 
     await homePage.expectHomePageTitleToBeVisible();
 
