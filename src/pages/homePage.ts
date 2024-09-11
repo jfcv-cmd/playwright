@@ -9,7 +9,7 @@ export default class HomePage {
     }
 
     async expectHomePageTitleToBeVisible() {
-        await expect(this.page.getByRole('tab', { name: this.homePageTitleSelector }))
+        await expect(this.page.getByTitle(this.homePageTitleSelector).first())
                     .toBeVisible({ timeout: 15000 })
                     .then(() => logger.info(`landed on the home page`))
                     .catch(error => {

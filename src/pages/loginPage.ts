@@ -13,7 +13,7 @@ export default class LoginPage {
 
     async navigateToLoginPage() {
         await this.page
-            .goto("/");
+            .goto("/lightning/page/home");
 
         logger.info("navigated to baseURL");
     }
