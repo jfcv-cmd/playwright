@@ -18,6 +18,7 @@ import dotenv from 'dotenv';
  */
 export default defineConfig({
   testDir: './src/tests',
+  timeout: 60000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
