@@ -3,6 +3,7 @@ import logger from "../utils/LoggerUtil";
 import LoginPage from "../pages/LoginPage";
 import { decrypt } from "../utils/CryptojsUtil";
 import contacts from "../testdata/contacts.json";
+import { generateTestData, exportToJson } from "../utils/FakerDataUtil";
 
 type User = {
     firstName: string;
@@ -54,4 +55,9 @@ test('contact creation', async ({ page }) => {
     await contactsPage.expectContactLabelToContainName(firstName, lastName);
 
     logger.info("test for contact creation completed.");
+});
+
+test.skip('generate fake data to test', async ({ page }) => {
+   const data = generateTestData(5);
+   exportToJson(data, 'test_data.json');
 });
