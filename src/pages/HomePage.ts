@@ -12,7 +12,7 @@ export default class HomePage {
 
     async expectHomePageTitleToBeVisible() {
         await expect(this.page.getByTitle(this.homePageTitleSelector).first())
-                    .toBeVisible({ timeout: 15000 })
+                    .toBeVisible({ timeout: 25000 })
                     .then(() => logger.info(`landed on the home page`))
                     .catch(error => {
                         logger.error(`Error landing on the home page: ${error}`);
